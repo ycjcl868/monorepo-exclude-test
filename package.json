@@ -1,0 +1,31 @@
+{
+  "name": "monorepo-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "scripts": {
+    "build": "lerna run --stream --sort build",
+    "clean": "yarn workspaces run clean",
+    "test": "yarn workspaces run test",
+    "version": "lerna version --conventional-commits "
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@types/jest": "^24.0.15",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "lerna": "^3.15.0",
+    "lint-staged": "^8.2.1",
+    "typescript": "^3.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
