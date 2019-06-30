@@ -12,12 +12,15 @@
     "clean": "yarn workspaces run clean",
     "test": "yarn workspaces run test",
     "release": "standard-version",
+    "commit": "git-cz",
     "version": "lerna version --conventional-commits "
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "^24.0.15",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "husky": "^2.7.0",
     "jest": "^24.8.0",
     "lerna": "^3.15.0",
@@ -28,6 +31,11 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
     }
   }
 }
