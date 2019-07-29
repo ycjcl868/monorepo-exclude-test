@@ -7,6 +7,7 @@ export function multi(a:number,b:number){
   return lodash.multiply(a,b);
 }
 export function divide(a:number, b:number){
+  console.log('1');
   return a/b;
 }
 export function minus(a:number,b:number){
